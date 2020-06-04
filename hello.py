@@ -4,8 +4,6 @@
 """
 import sys
 
-
-
 from django.conf import settings
 # 设置
 settings.configure(
@@ -22,7 +20,7 @@ settings.configure(
 from django.conf.urls import url
 from django.http import HttpResponse
 
-
+# 创建视图
 def index(request):
     return HttpResponse('Hello World')
 
