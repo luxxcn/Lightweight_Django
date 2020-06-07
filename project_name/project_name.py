@@ -1,23 +1,19 @@
 """
- Django 是一个MTV框架（model-template-view）
- 该文件将典型的views.py和urls.py文件合并了
+可复用模板
+
+与project_name文件同级目录下执行以下命令，
+可以创建foo目录和可运行的foo.py项目文件 :
+    django-admin startproject foo --template=project_name
 """
 import os
 import sys
 
 from django.conf import settings
 
-"""
-获取运行环境的debug和secret_key设置
-    export DEBUG=off # win下用set命令设置
-    python hello.py runserver
-"""
 DEBUG = os.environ.get('DEBUG', 'on') == 'on'
 
-SECRET_KEY = os.environ.get('SECRET_KEY', os.urandom(32))
+SECRET_KEY = os.environ.get('SECRET_KEY', '{{ secret_key }}')
 
-# debug 为False时，需要设置ALLOWED_HOSTS
-# You must set settings.ALLOWED_HOSTS if DEBUG is False
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost').split(',')
 
 # 设置
