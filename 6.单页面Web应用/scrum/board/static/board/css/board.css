@@ -63,7 +63,7 @@ header .title {
 }
 
 header nav {
-    display: inline-block;
+    display: block;
     float: right;
     padding-right: 25px;
 }
