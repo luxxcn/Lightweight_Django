@@ -72,7 +72,7 @@
             FormView.prototype.submit.apply(this, arguments);
             data = this.serializeForm(this.form);
             $.post(app.apiLogin, data)
-                .done($.proxy(this.loginSuccess, this))
+                .success($.proxy(this.loginSuccess, this))
                 .fail($.proxy(this.failure, this));
         },
         loginSuccess: function(data) {
